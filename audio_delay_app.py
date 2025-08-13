@@ -35,18 +35,18 @@ class AudioDelayApp:
 
         # Criar tema dark (azul mais opaco)
         style.theme_create("dark", parent="default", settings={
-            "TFrame": {"configure": {"background": "#031D44"}},
-            "TLabel": {"configure": {"background": "#031D44", "foreground": "#E6E6FA", "font": ("Segoe UI", 11)}},
-            "Title.TLabel": {"configure": {"background": "#031D44", "foreground": "#E6E6FA", "font": ("Segoe UI", 16, "bold")}},
-            "VU.TLabel": {"configure": {"background": "#031D44", "foreground": "#E6E6FA", "font": ("Segoe UI", 10, "bold")}},
-            "Footer.TLabel": {"configure": {"background": "#031D44", "foreground": "#B0C4DE", "font": ("Segoe UI", 10, "bold")}},
-            "Status.TLabel": {"configure": {"background": "#031D44", "foreground": "#E6E6FA", "font": ("Segoe UI", 10, "italic")}},
-            "TButton": {"configure": {"font": ("Segoe UI", 10, "bold"), "padding": 8, "background": "#2555E8", "foreground": "#E6E6FA"},
+            "TFrame": {"configure": {"background": "#2A4B7C"}},
+            "TLabel": {"configure": {"background": "#2A4B7C", "foreground": "#E6E6FA", "font": ("Segoe UI", 11)}},
+            "Title.TLabel": {"configure": {"background": "#2A4B7C", "foreground": "#E6E6FA", "font": ("Segoe UI", 16, "bold")}},
+            "VU.TLabel": {"configure": {"background": "#2A4B7C", "foreground": "#E6E6FA", "font": ("Segoe UI", 10, "bold")}},
+            "Footer.TLabel": {"configure": {"background": "#2A4B7C", "foreground": "#B0C4DE", "font": ("Segoe UI", 10, "bold")}},
+            "Status.TLabel": {"configure": {"background": "#2A4B7C", "foreground": "#E6E6FA", "font": ("Segoe UI", 10, "italic")}},
+            "TButton": {"configure": {"font": ("Segoe UI", 10, "bold"), "padding": 8, "background": "#4169E1", "foreground": "#E6E6FA"},
                         "map": {"background": [("active", "#4682B4")]}},
-            "TEntry": {"configure": {"font": ("Segoe UI", 10), "fieldbackground": "#2555E8", "foreground": "#E6E6FA", "padding": "4 4 4 4"}},
-            "TCombobox": {"configure": {"font": ("Segoe UI", 10), "fieldbackground": "#2555E8", "foreground": "#E6E6FA", "padding": "4 4 4 4"}},
-            "TLabelframe": {"configure": {"background": "#031D44", "foreground": "#E6E6FA"}},
-            "TLabelframe.Label": {"configure": {"background": "#031D44", "foreground": "#E6E6FA"}},
+            "TEntry": {"configure": {"font": ("Segoe UI", 10), "fieldbackground": "#4169E1", "foreground": "#E6E6FA", "padding": "4 4 4 4"}},
+            "TCombobox": {"configure": {"font": ("Segoe UI", 10), "fieldbackground": "#4169E1", "foreground": "#E6E6FA", "padding": "4 4 4 4"}},
+            "TLabelframe": {"configure": {"background": "#2A4B7C", "foreground": "#E6E6FA"}},
+            "TLabelframe.Label": {"configure": {"background": "#2A4B7C", "foreground": "#E6E6FA"}},
         })
 
         # Criar tema light (bege mais claro)
@@ -174,7 +174,7 @@ class AudioDelayApp:
         # Rodapé fixo
         footer_frame = ttk.Frame(master, style="TFrame")
         footer_frame.grid(row=1, column=0, sticky="sew")
-        ttk.Label(footer_frame, text="© Eng RBS Rádios by Maiko Costa", style="Footer.TLabel", anchor="e").pack(fill="x", padx=10)
+        ttk.Label(footer_frame, text="© Eng RBS Rádios by Maiko Costa - Versão 2.0", style="Footer.TLabel", anchor="e").pack(fill="x", padx=10)
 
         master.protocol("WM_DELETE_WINDOW", self.on_closing)
         self.set_initial_state()
@@ -233,9 +233,9 @@ class AudioDelayApp:
             if self.delay_active:
                 self.buffer.append(in_data)
                 try:
-                    minutes = int(self.minutes_entry.get())
-                    seconds = int(self.seconds_entry.get())
-                    milliseconds = int(self.milliseconds_entry.get())
+                    minutes = int(self.minutes_entry.get() or "0")
+                    seconds = int(self.seconds_entry.get() or "0")
+                    milliseconds = int(self.milliseconds_entry.get() or "0")
                     total_delay_ms = (minutes * 60 * 1000) + (seconds * 1000) + milliseconds
                 except ValueError:
                     total_delay_ms = 0
@@ -349,7 +349,9 @@ class AudioDelayApp:
             self.stop_button.pack(side="left", padx=10, fill="x", expand=True)
             self.stop_button.config(state=tk.NORMAL)
             self.bypass_button.config(text="Bypass Ativo", state=tk.NORMAL)
-            self.set_input_states(tk.DISABLED)
+            # Keep delay input fields enabled to allow real-time adjustments
+            self.input_device_dropdown.config(state=tk.DISABLED)
+            self.output_device_dropdown.config(state=tk.DISABLED)
             self.status_label.config(text="Executando em modo Bypass")
 
         except Exception as e:
