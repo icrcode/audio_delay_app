@@ -35,34 +35,34 @@ class AudioDelayApp:
 
         # Criar tema dark (azul mais opaco)
         style.theme_create("dark", parent="default", settings={
-            "TFrame": {"configure": {"background": "#2A4B7C"}},
-            "TLabel": {"configure": {"background": "#2A4B7C", "foreground": "#E6E6FA", "font": ("Segoe UI", 11)}},
-            "Title.TLabel": {"configure": {"background": "#2A4B7C", "foreground": "#E6E6FA", "font": ("Segoe UI", 16, "bold")}},
-            "VU.TLabel": {"configure": {"background": "#2A4B7C", "foreground": "#E6E6FA", "font": ("Segoe UI", 10, "bold")}},
-            "Footer.TLabel": {"configure": {"background": "#2A4B7C", "foreground": "#B0C4DE", "font": ("Segoe UI", 10, "bold")}},
-            "Status.TLabel": {"configure": {"background": "#2A4B7C", "foreground": "#E6E6FA", "font": ("Segoe UI", 10, "italic")}},
-            "TButton": {"configure": {"font": ("Segoe UI", 10, "bold"), "padding": 8, "background": "#4169E1", "foreground": "#E6E6FA"},
-                        "map": {"background": [("active", "#4682B4")]}},
-            "TEntry": {"configure": {"font": ("Segoe UI", 10), "fieldbackground": "#4169E1", "foreground": "#E6E6FA", "padding": "4 4 4 4"}},
-            "TCombobox": {"configure": {"font": ("Segoe UI", 10), "fieldbackground": "#4169E1", "foreground": "#E6E6FA", "padding": "4 4 4 4"}},
-            "TLabelframe": {"configure": {"background": "#2A4B7C", "foreground": "#E6E6FA"}},
-            "TLabelframe.Label": {"configure": {"background": "#2A4B7C", "foreground": "#E6E6FA"}},
+            "TFrame": {"configure": {"background": "#0B264E"}},
+            "TLabel": {"configure": {"background": "#0B264E", "foreground": "#E6E6FA", "font": ("Segoe UI", 11)}},
+            "Title.TLabel": {"configure": {"background": "#0B264E", "foreground": "#E6E6FA", "font": ("Segoe UI", 16, "bold")}},
+            "VU.TLabel": {"configure": {"background": "#0B264E", "foreground": "#E6E6FA", "font": ("Segoe UI", 10, "bold")}},
+            "Footer.TLabel": {"configure": {"background": "#0B264E", "foreground": "#B0C4DE", "font": ("Segoe UI", 10, "bold")}},
+            "Status.TLabel": {"configure": {"background": "#0B264E", "foreground": "#E6E6FA", "font": ("Segoe UI", 10, "italic")}},
+            "TButton": {"configure": {"font": ("Segoe UI", 10, "bold"), "padding": 8, "background": "#1940B3", "foreground": "#E6E6FA"},
+                        "map": {"background": [("active", "#1B4A70")]}},
+            "TEntry": {"configure": {"font": ("Segoe UI", 10), "fieldbackground": "#1940B3", "foreground": "#E6E6FA", "padding": "4 4 4 4"}},
+            "TCombobox": {"configure": {"font": ("Segoe UI", 10), "fieldbackground": "#1940B3", "foreground": "#E6E6FA", "padding": "4 4 4 4"}},
+            "TLabelframe": {"configure": {"background": "#0B264E", "foreground": "#E6E6FA"}},
+            "TLabelframe.Label": {"configure": {"background": "#0B264E", "foreground": "#E6E6FA"}},
         })
 
         # Criar tema light (bege mais claro)
         style.theme_create("light", parent="default", settings={
-            "TFrame": {"configure": {"background": "#F5F5DC"}},
-            "TLabel": {"configure": {"background": "#F5F5DC", "foreground": "#333333", "font": ("Segoe UI", 11)}},
-            "Title.TLabel": {"configure": {"background": "#F5F5DC", "foreground": "#333333", "font": ("Segoe UI", 16, "bold")}},
-            "VU.TLabel": {"configure": {"background": "#F5F5DC", "foreground": "#333333", "font": ("Segoe UI", 10, "bold")}},
-            "Footer.TLabel": {"configure": {"background": "#F5F5DC", "foreground": "#555555", "font": ("Segoe UI", 10, "bold")}},
-            "Status.TLabel": {"configure": {"background": "#F5F5DC", "foreground": "#333333", "font": ("Segoe UI", 10, "italic")}},
+            "TFrame": {"configure": {"background": "#B8C6FF"}},
+            "TLabel": {"configure": {"background": "#B8C6FF", "foreground": "#333333", "font": ("Segoe UI", 11)}},
+            "Title.TLabel": {"configure": {"background": "#B8C6FF", "foreground": "#333333", "font": ("Segoe UI", 16, "bold")}},
+            "VU.TLabel": {"configure": {"background": "#B8C6FF", "foreground": "#333333", "font": ("Segoe UI", 10, "bold")}},
+            "Footer.TLabel": {"configure": {"background": "#B8C6FF", "foreground": "#555555", "font": ("Segoe UI", 10, "bold")}},
+            "Status.TLabel": {"configure": {"background": "#B8C6FF", "foreground": "#333333", "font": ("Segoe UI", 10, "italic")}},
             "TButton": {"configure": {"font": ("Segoe UI", 10, "bold"), "padding": 8, "background": "#D3D3D3", "foreground": "#333333"},
                         "map": {"background": [("active", "#C0C0C0")]}},
             "TEntry": {"configure": {"font": ("Segoe UI", 10), "fieldbackground": "#FFFFFF", "foreground": "#333333", "padding": "4 4 4 4"}},
             "TCombobox": {"configure": {"font": ("Segoe UI", 10), "fieldbackground": "#FFFFFF", "foreground": "#333333", "padding": "4 4 4 4"}},
-            "TLabelframe": {"configure": {"background": "#F5F5DC", "foreground": "#333333"}},
-            "TLabelframe.Label": {"configure": {"background": "#F5F5DC", "foreground": "#333333"}},
+            "TLabelframe": {"configure": {"background": "#B8C6FF", "foreground": "#333333"}},
+            "TLabelframe.Label": {"configure": {"background": "#B8C6FF", "foreground": "#333333"}},
         })
 
         style.theme_use("dark")
